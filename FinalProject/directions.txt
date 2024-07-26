@@ -1,0 +1,92 @@
+-- Lily Chau, Nick Criss, Renee Bogdany, Chloe Calderon, Natnail Tolossa, Jason Chen
+-- ISTE 330 - Group 1
+
+Directions to use the program
+
+Step One: Source the sql file provided (researchSpecialty.sql)
+
+Step Two: Connecting to the database 
+    run the PresentationLayer provided (this has the main method in it)
+    you'll be prompted to enter in a password (use your personal sql password - default would be student)
+    once you've connected to the database you'll see some options in a GUI
+
+Step Three: GUI interface
+    The GUI will let you choose from 4 different roles
+        Faculty - choose this if you're trying to access/add data as a faculty member
+        Student - choose this if you're trying to access/add data as a student
+        Organization - choose this if you're trying to access/add data as an organization outside of RIT
+        Exit - this will terminate all actions and end the run
+
+Step Four: Faculty Menu
+
+    A login menu for faculty will appear.
+    Sample Logins you can use:
+        Username: dsbics
+        Password: basic
+
+        Username: efgics
+        Password: password
+
+The Faculty Menu will appear when choosing the faculty option in Step Three.
+    
+    The faculty menu will have the following options for the user to choose:
+    1. Add Faculty - This option allows the user to add a new faculty into the faculty table
+        respective function from the DataLayer: insertFacultyRecord()
+    2. Update Faculty - This allows a faculty member to update their information using their faculty_ID
+        respective function from the DataLayer: updateFaculty()
+    3. Add Abstract - This allows faculty memebrs to add abstract + content so students can search through and match interests
+        respective function from the DataLayer: addAbstract()
+    4. Add Specialty - this option prompts the faculty to add a specialty to their table so that students can match with them
+        NOTE: if you want to add more than one specialty break it up with "," no spaces
+        respective function from the DataLayer: addFacultySpecialty()
+    5. Search for Student Specialty Matches - this will ask the faculty member to enter a specialty interest word and print out the students who match the specialty
+        respective function from the DataLayer: searchByInterest()
+    6. Return to Main Menu - choosing this will just take the user back to Step Three
+
+
+Step Five: Student Menu
+The Student Menu will appear when choosing the student option in Step Three.
+
+    A login menu for student will appear.
+    Sample Logins you can use:
+        Username: rkb4472
+        Password: password
+
+        Username: cjc3239 
+        Password: student
+
+        Username: jc3496
+        Password: student1
+    
+    The student menu will have the following options for the user to choose:
+    1. Add Student - This option allows the user to add a new student to the database. 
+        The user will be prompted to enter the student's first name, last name, email, and portfolio link.
+        respective function from the DataLayer: addStudent()
+    2. Add Specialty - This option allows the user to add a specialty to a student. 
+        The user will be prompted to enter the student's id and the specialty.
+        NOTE: if you want to add more than one specialty break it up with "," no spaces
+        respective function from the DataLayer: addStudentSpecialty()
+    3. View Faculty Specialty Matches - This option allows the user to view faculty members who match a certain specialty. 
+        The user will be prompted to enter the specialty.
+        respective function from the DataLayer: checkSpecialtyPairing()
+    4. View Faculty Abstract Matches - This option allows the user to search for faculty members by keyword. 
+        The user will be prompted to enter a keyword.
+        respective function from the DataLayer: searchKeyWords()
+    5. Return to Main Menu - Choosing this will just take the user back to Step Three
+
+
+Step Six: Organization Menu
+The Organization Menu will appear when choosing the organization option in Step Three
+
+Starting out - We currently have 3 organizations in the database. The first two (ids: 1 and 2) both have at least one match for the keyword (if you're trying to find relevant faculty/student),
+but the 3rd organization (id: 3) does not have a match.
+
+    The organization menu will have the following options for the user to choose:
+    1. Add Organization - This option allows the user to add a new organization to the database.
+        The user will be prompted to enter the organization's name and a keyword (which is a skill of interest to that organization)
+        respective function from the DataLayer: addOrganization() 
+    2. Find relevant faculty/student - This option allows the user to find relevant students and faculty members based on the keyword they inputed
+        The organization will be asked for its id (need to find the relevant keyword) and then will return relevant student and faculty information
+        respective functions from the DataLayer: uses getOrganizationKeyword(), searchKeyWords() and checkSpecialtyPairing()
+    3. Return to Main Menu - Choosing this will just take the user back to Step Three
+    
